@@ -48,7 +48,7 @@ This project use some libraries:
 ```
 6. Go to the project folder
 ```bash
-  django-admin startproject 'here name project'
+  cd 'name project'
 ```
 7. Run your project
 ```bash
