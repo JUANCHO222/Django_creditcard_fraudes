@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 m-10 p-10" style="overflow-x: auto;">
+            <h1>Tabla de Datos del Head</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- Aquí se definen las columnas de la tabla -->
+                {% for column in head.columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se recorren las filas de los datos -->
+            {% for index, row in head.iterrows %}
+                <tr>
+                    <!-- Aquí se recorren las celdas de cada fila -->
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <br/>
+    <p>Número de características: {{ nc }}</p>
+    <p>Longitud del conjunto de datos: {{ lcd }}</p>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Clase</th>
+                <th>Frecuencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Class, dtype in tab1.items %}
+                <tr>
+                    <td>{{ Class }}</td>
+                    <td>{{ dtype }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Clase</th>
+                <th>Frecuencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Class, Columns in list1.items %}
+                <tr>
+                    <td>{{ Class }}</td>
+                    <td>{{ Columns }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-12 m-10 p-10" style="overflow-x: auto;">
+            <h1>Tabla de Datos del Head</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- Aquí se definen las columnas de la tabla -->
+                {% for column in des.columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se recorren las filas de los datos -->
+            {% for index, row in des.iterrows %}
+                <tr>
+                    <!-- Aquí se recorren las celdas de cada fila -->
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <img src="{% static '../static/images/decision_boundary.png' %}" alt="">
+    <img src="{% static '../static/images/dos caracteristicas.png' %}" alt="">
+</body>
+</html>

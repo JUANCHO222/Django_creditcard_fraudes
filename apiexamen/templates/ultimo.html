@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{texto1}}</p>
+
+    <br>
+
+    <ul>
+        {% for info in lista1 %}
+        <li>{{info}}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    <img src="{% static '../static/images/mancha_de_sangre.png' %}" alt="">
+
+</body>
+</html>

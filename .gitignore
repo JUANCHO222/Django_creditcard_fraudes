@@ -1,0 +1,14 @@
+*.csv
+apiexamen/apidesarrollo/__pycache__
+Lib/
+
+# enviroment/apidesar
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/
+exam/
+EXAM/

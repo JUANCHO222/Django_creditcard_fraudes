@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 m-10 p-10" style="overflow-x: auto;">
+            <h1>Tabla de Datos del Head</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- Aquí se definen las columnas de la tabla -->
+                {% for column in tab4.columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se recorren las filas de los datos -->
+            {% for index, row in tab4.iterrows %}
+                <tr>
+                    <!-- Aquí se recorren las celdas de cada fila -->
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+
+    <br>
+    <p>{{textos1}}</p>
+    <br>
+    <ul>
+        {% for info in lista3 %}
+        <li>{{info}}</li>
+        {% endfor %}
+    </ul>
+
+    <p>{{pss}}</p>
+    <p>{{scc}}</p>
+    <p>{{chs}}</p>
+    <img src="{% static '../static/images/uzumaki_uno.png' %}" alt="">
+    <img src="{% static '../static/images/uzumaki_dos.png' %}" alt="">
+    <img src="{% static '../static/images/plot_decision_boundaries.png' %}" alt="">
+</body>
+</html>
